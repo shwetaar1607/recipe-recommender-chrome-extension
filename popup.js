@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
             contents: chatHistory
         };
 
-        const apiKey = "AIzaSyDbowP62OL1-zhFE5OgtQLyObp_nBvFyJs"; // IMPORTANT: Replace with your actual API key
+        const apiKey = "GEMINI_API_KEY"; // IMPORTANT: Replace with your actual API key
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
         try {

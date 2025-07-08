@@ -59,7 +59,7 @@ To use this Chrome Extension:
     -   Go to [Google AI Studio](https://aistudio.google.com/app/apikey) to generate your Gemini API key.
     -   Open `popup.js`. Locate the line:
         ```javascript
-        const apiKey = "AIzaSyDbowP62OL1-zhFE5OgtQLyObp_nBvFyJs"; // IMPORTANT: Replace with your actual API key
+        const apiKey = "GEMINI_API_KEY"; // IMPORTANT: Replace with your actual API key
         ```
     -   **Replace the placeholder API key** with your actual Gemini API key.
         *For a production extension, you would typically use a backend server to handle API calls to keep your API key secure.*

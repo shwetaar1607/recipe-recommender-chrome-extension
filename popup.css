@@ -1,0 +1,27 @@
+/* popup.css */
+/* No need for extensive custom CSS if using Tailwind extensively. */
+/* This file is mainly for any specific overrides or very custom styles not easily done with Tailwind. */
+
+body {
+    font-family: 'Inter', sans-serif;
+    /* Tailwind handles most of this: w-80, p-4, bg-gray-100, text-gray-800, rounded-lg, shadow-lg */
+}
+
+/* Basic styling for scrollbar in the response area */
+#responseArea::-webkit-scrollbar {
+    width: 8px;
+}
+
+#responseArea::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#responseArea::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+#responseArea::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

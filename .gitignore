@@ -1,0 +1,2 @@
+# Ignore any temporary files or build artifacts if they were to be generated
+*.zip

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Recommender</title>
+    <link rel="stylesheet" href="popup.css">
+    <!-- Load Tailwind CSS for basic styling -->
+    <script src="tailwind.min.js"></script>
+    <style>
+        /* Custom styles to ensure Inter font and rounded corners */
+        body {
+            font-family: 'Inter', sans-serif;
+            border-radius: 0.5rem; /* Apply rounded corners to the body */
+        }
+        .rounded-element {
+            border-radius: 0.5rem; /* A utility class for consistent rounded corners */
+        }
+    </style>
+</head>
+<body class="p-4 bg-gray-100 text-gray-800 w-80 rounded-lg shadow-lg">
+    <div class="flex flex-col space-y-4">
+        <h1 class="text-xl font-bold text-center text-blue-700" role="heading" aria-level="1">Recipe Recommender</h1>
+
+        <div class="flex flex-col">
+            <label for="recipeInput" class="text-sm font-medium mb-1" aria-label="Enter recipe or ingredients">
+                Enter recipe or ingredients:
+            </label>
+            <input
+                type="text"
+                id="recipeInput"
+                placeholder="e.g., Chicken Curry, Pasta with pesto"
+                class="p-2 border border-gray-300 rounded-element focus:outline-none focus:ring-2 focus:ring-blue-500"
+                aria-required="false"
+                aria-describedby="inputHint"
+            >
+            <p id="inputHint" class="text-xs text-gray-500 mt-1">
+                (Optional: If left empty, will try to get recipe from current page)
+            </p>
+        </div>
+
+        <button
+            id="recommendButton"
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-element shadow-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+            role="button"
+            aria-label="Get Recipe Recommendation"
+        >
+            Get Recommendation
+        </button>
+
+        <div id="loadingIndicator" class="hidden text-center text-blue-500 font-medium" role="status" aria-live="polite">
+            Generating recommendation...
+        </div>
+
+        <div id="responseArea" class="bg-white p-3 border border-gray-200 rounded-element shadow-sm min-h-[100px] max-h-64 overflow-y-auto" role="log" aria-live="polite">
+            <p class="text-gray-600">Your recommendations will appear here.</p>
+        </div>
+
+        <!-- Message Box for alerts/confirmations -->
+        <div id="messageBox" class="hidden fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center p-4 z-50">
+            <div class="bg-white p-6 rounded-lg shadow-xl max-w-sm w-full text-center">
+                <p id="messageText" class="mb-4 text-gray-800"></p>
+                <button id="messageBoxClose" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-element focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
